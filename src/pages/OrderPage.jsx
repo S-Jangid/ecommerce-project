@@ -1,11 +1,14 @@
 import { Link } from "react-router"
 import { Header } from "../components/Header"
 import "./OrderPage.css"
+import buyAgainIcon from "../assets/images/icons/buy-again.png"
 
 export function OrderPage() {
     return (
         <>
             <title>Orders</title>
+
+            <link rel="icon" href="images/orders-favicon.png" />
 
             <Header />
 
@@ -49,7 +52,7 @@ export function OrderPage() {
                                     Quantity: 1
                                 </div>
                                 <button className="buy-again-button button-primary">
-                                    <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                                    <img className="buy-again-icon" src={buyAgainIcon} />
                                     <span className="buy-again-message">Add to Cart</span>
                                 </button>
                             </div>
@@ -77,7 +80,7 @@ export function OrderPage() {
                                     Quantity: 2
                                 </div>
                                 <button className="buy-again-button button-primary">
-                                    <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                                    <img className="buy-again-icon" src={buyAgainIcon} />
                                     <span className="buy-again-message">Add to Cart</span>
                                 </button>
                             </div>
@@ -128,7 +131,7 @@ export function OrderPage() {
                                     Quantity: 2
                                 </div>
                                 <button className="buy-again-button button-primary">
-                                    <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                                    <img className="buy-again-icon" src={buyAgainIcon} />
                                     <span className="buy-again-message">Add to Cart</span>
                                 </button>
                             </div>
