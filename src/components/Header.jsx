@@ -6,7 +6,7 @@ import searchIcon from "../assets/images/icons/search-icon.png"
 import cartIcon from "../assets/images/icons/cart-icon.png"
 
 export function Header({ cart }) {
-    let totalQuantity = '';
+    let totalQuantity = 0;
 
     cart.forEach(cartItem => {
         totalQuantity += cartItem.quantity;
