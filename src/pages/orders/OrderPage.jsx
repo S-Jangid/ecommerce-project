@@ -9,17 +9,22 @@ export function OrderPage({ cart }) {
 
     const [orders, setOrders] = useState(null);
     useEffect(() => {
-        axios.get("/api/orders?expand=products")
-            .then((response) => {
-                setOrders(response.data)
-            })
+
+        const fetchOrders = async()=>{
+            const response = await axios.get("/api/orders?expand=products")
+            setOrders(response.data)
+
+        }
+
+        fetchOrders();
+
     }, [])
 
     return (
         <>
             <title>Orders</title>
 
-            <link rel="icon" href="images/orders-favicon.png" />
+            <link rel="icon" href="public/images/orders-favicon.png" />
 
             <Header cart={cart} />
 

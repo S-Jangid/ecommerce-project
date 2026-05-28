@@ -11,17 +11,19 @@ export function HomePage({ cart }) {
 
     useEffect(()=>{
         
-        axios.get('/api/products')
-        .then((response) => {
+        const fetchProducts = async () =>{
+            const response = await axios.get('/api/products')
             setProducts(response.data);
-        })
+        }
+
+        fetchProducts();
     }, [])
     
 
     return (
         <>
             <title>Ecommerce Project</title>
-            <link rel="icon" href=" images/home-favicon.png" />
+            <link rel="icon" href=" public/images/home-favicon.png" />
 
             <Header 
                 cart={cart}
