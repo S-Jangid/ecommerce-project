@@ -16,7 +16,7 @@ export function OrderSummary({deliveryOptions, cart, loadCart}) {
                         <DeliveryDate selectedDeliveryOption={selectedDeliveryOption} />
 
                         <div className="cart-item-details-grid">
-                            <CartItemDetails cartItem={cartItem}/>
+                            <CartItemDetails cartItem={cartItem} loadCart={loadCart}/>
 
                             <div className="delivery-options">
                                 <div className="delivery-options-title">
@@ -39,7 +39,7 @@ export function OrderSummary({deliveryOptions, cart, loadCart}) {
                                     }
 
                                     return (
-                                        <div key={deliveryOption.id} className="delivery-option" onChange={updateDeliveryOptions}>
+                                        <div key={deliveryOption.id} className="delivery-option" onClick={updateDeliveryOptions}>
                                             <input type="radio"
                                                 checked={deliveryOption.id === cartItem.deliveryOptionId}
                                                 onChange={() => {}}
