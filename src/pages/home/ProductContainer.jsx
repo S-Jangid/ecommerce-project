@@ -1,15 +1,21 @@
 import axios from "axios";
 import { amountFormat } from "../../utils/amount-format";
-import { useState } from "react";
+import {  useState } from "react";
 
 export default function ProductContainer({ product, checkmarkIcon, loadCart }) {
     const [quantity, setQuantity] = useState(1);
+
+    const [ addMeassage, setAddMessage] = useState(false);
 
     async function addToCart(){
         await axios.post('/api/cart-items', {
             productId: product.id,
             quantity: quantity,
         })
+
+        setAddMessage(true);
+        setTimeout(()=>{ setAddMessage(false)},2000);
+
         await loadCart();
     }
 
@@ -59,7 +65,7 @@ export default function ProductContainer({ product, checkmarkIcon, loadCart }) {
 
             <div className="product-spacer"></div>
 
-            <div className="added-to-cart">
+            <div className="added-to-cart" style={{opacity : addMeassage ? 1 : 0}}>
                 <img src={checkmarkIcon} />
                 Added
             </div>
