@@ -4,7 +4,6 @@ import { Header } from "../../components/Header"
 import { ProductsGrid } from './ProductsGrid'
 // import { products } from "../../starting-code/data/products"
 import "./HomePage.css"
-import checkmarkIcon from "../../assets/images/icons/checkmark.png"
 import { useSearchParams } from 'react-router'
 
 export function HomePage({ cart, loadCart }) {
@@ -39,7 +38,7 @@ export function HomePage({ cart, loadCart }) {
             />
 
             <div className="home-page">
-                <ProductsGrid products={products} checkmarkIcon={checkmarkIcon} loadCart={loadCart} />
+                <ProductsGrid products={products} loadCart={loadCart} />
             </div>
         </>
     )

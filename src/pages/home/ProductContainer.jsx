@@ -1,8 +1,9 @@
 import axios from "axios";
 import { amountFormat } from "../../utils/amount-format";
 import {  useState } from "react";
+import checkmarkIcon from "../../assets/images/icons/checkmark.png"
 
-export default function ProductContainer({ product, checkmarkIcon, loadCart }) {
+export default function ProductContainer({ product, loadCart }) {
     const [quantity, setQuantity] = useState(1);
 
     const [ addMeassage, setAddMessage] = useState(false);
@@ -29,6 +30,7 @@ export default function ProductContainer({ product, checkmarkIcon, loadCart }) {
             key={product.id}>
             <div className="product-image-container">
                 <img className="product-image"
+                data-testid="product-image"
                     src={product.image} />
             </div>
 
@@ -38,6 +40,7 @@ export default function ProductContainer({ product, checkmarkIcon, loadCart }) {
 
             <div className="product-rating-container">
                 <img className="product-rating-stars"
+                    data-testid="product-rating-stars"
                     src={`images/ratings/rating-${product.rating.stars * 10}.png`} />
                 <div className="product-rating-count link-primary">
                     {product.rating.count}
