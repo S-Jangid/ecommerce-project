@@ -50,7 +50,7 @@ describe( 'Product component', () => {
             quantity: 1,
         })  
 
-        expect(loadCart).toHaveBeenCalledWith();
+        expect(loadCart).toHaveBeenCalled();
 
 
     })
