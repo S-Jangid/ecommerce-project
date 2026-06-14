@@ -53,7 +53,10 @@ export default function ProductContainer({ product, loadCart }) {
             </div>
 
             <div className="product-quantity-container">
-                <select value={quantity} onChange={updateQunatity}>
+                <select 
+                    value={quantity}
+                    data-testid =  "product-quantity-selector"
+                    onChange={updateQunatity}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

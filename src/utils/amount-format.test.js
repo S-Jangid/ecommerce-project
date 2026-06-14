@@ -11,4 +11,12 @@ describe('formatMoney', ()=>{
         expect(amountFormat(100)).toBe('$1.00');
 
     })
+
+    it('Handles 0', () => {
+        expect(amountFormat(0)).toBe('$0.00');
+    })
+
+    it('Handles negative Price', () => {
+        expect(amountFormat(-999)).toBe('-$9.99');
+    })
 })
