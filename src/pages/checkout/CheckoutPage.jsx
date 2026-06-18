@@ -36,7 +36,7 @@ export function CheckoutPage({ cart, loadCart }) {
     return (
         <>
             <title>Checkout</title>
-            <link rel="icon" href="public/images/cart-favicon.png" />
+            <link rel="icon" href="/images/cart-favicon.png" />
             < CheckoutHeader />
             <div className="checkout-page">
                 <div className="page-title">Review your order</div>
@@ -44,7 +44,7 @@ export function CheckoutPage({ cart, loadCart }) {
                 <div className="checkout-grid">
                     <OrderSummary deliveryOptions={deliveryOptions} cart={cart} loadCart={loadCart} />
 
-                    <PaymentSummary paymentSummary={paymentSummary} />
+                    <PaymentSummary paymentSummary={paymentSummary} loadCart={loadCart} />
                 </div>
             </div>
         </>
